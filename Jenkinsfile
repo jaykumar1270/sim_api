@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE_NAME = 'sim_api'
         VIRTUAL_ENV = 'sim_api_env'
         CONTAINER_NAME = 'sim_api_cont'
-        PATH = 'C:/Program Files/Git/bin'
+
     }
 
     stages {
@@ -13,8 +13,8 @@ pipeline {
             steps {
                 script {
                     // Set up any necessary environment configurations
-                    ${PATH}\sh "python -m venv ${VIRTUAL_ENV}"
-                    ${PATH}\sh "source ${VIRTUAL_ENV}/bin/activate"
+                    bat "python -m venv ${VIRTUAL_ENV}"
+                    bat "source ${VIRTUAL_ENV}/bin/activate"
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Perform linting (replace with your linting command)
-                    sh "flake8 app/"
+                    bat "flake8 app/"
                 }
             }
         }
