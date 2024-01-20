@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Set up any necessary environment configurations
-                    sh "python3 -m venv ${VIRTUAL_ENV}"
+                    sh "python -m venv ${VIRTUAL_ENV}"
                     sh "source ${VIRTUAL_ENV}/Scripts/activate"
                 }
             }
