@@ -11,3 +11,6 @@ def read_root():
 @app.get("/items")
 def read_item():
     return {"Hello:Item"}
+
+
+#uvicorn main:app --reload
