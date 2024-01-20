@@ -5,6 +5,7 @@ pipeline {
         DOCKER_IMAGE_NAME = 'sim_api'
         VIRTUAL_ENV = 'sim_api_env'
         CONTAINER_NAME = 'sim_api_cont'
+        PATH = 'C:/Program Files/Git/bin'
     }
 
     stages {
@@ -12,8 +13,8 @@ pipeline {
             steps {
                 script {
                     // Set up any necessary environment configurations
-                    sh "python -m venv ${VIRTUAL_ENV}"
-                    sh "source ${VIRTUAL_ENV}/Scripts/activate"
+                    ${PATH}\sh "python -m venv ${VIRTUAL_ENV}"
+                    ${PATH}\sh "source ${VIRTUAL_ENV}/bin/activate"
                 }
             }
         }
